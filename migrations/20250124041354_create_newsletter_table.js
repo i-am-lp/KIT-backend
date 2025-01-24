@@ -8,7 +8,7 @@ export async function up(knex) {
     return knex.schema.createTable("newsletter", (table) => {
       table.increments("id").primary();
       table.string("name").notNullable();
-      table.text("update_text").notNullable(); // Updated column name
+      table.text("update_text").notNullable(); 
       table.string("image").notNullable();
       table.string("question").notNullable();
       table

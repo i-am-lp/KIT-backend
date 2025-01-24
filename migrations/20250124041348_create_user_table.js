@@ -4,8 +4,8 @@
  */
 export function up(knex) {
     return knex.schema.createTable("user", (table) => {
-      table.increments("id").primary(); // Primary key
-      table.string("name").notNullable(); // User's name
+      table.increments("id").primary();
+      table.string("name").notNullable(); 
     });
   }
   

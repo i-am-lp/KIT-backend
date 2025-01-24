@@ -1,7 +1,6 @@
 import knex from "knex";
-import knexConfig from "./knexfile.js"; // Make sure this is the correct path to your knexfile
+import knexConfig from "./knexfile.js";
 
-// Initialize knex with the development configuration
 const db = knex(knexConfig.development);
 
 (async () => {
@@ -17,6 +16,6 @@ const db = knex(knexConfig.development);
   } catch (error) {
     console.error("Error querying the database:", error);
   } finally {
-    await db.destroy(); // Close the connection properly
+    await db.destroy(); 
   }
 })();
