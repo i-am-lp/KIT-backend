@@ -4,9 +4,9 @@ import bcrypt from "bcrypt";
 import knexConfig from "../knexfile.js";
 
 const router = express.Router();
-const db = knex(knexConfig);
+const db = knex(knexConfig.development);
 
-router.post("/login/register", async (req, res) => {
+router.post("/register", async (req, res) => {
     const {
         name,
         email,

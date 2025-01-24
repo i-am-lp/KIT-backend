@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import loginRouter from './routes/login-router.js'
 
 dotenv.config();
 
@@ -15,7 +16,9 @@ app.get('/', (_req, res) => {
 });
 
 app.get('/api', (_req, res) => {
-    res.json({ message: 'Welcome to InsStock' });
+    res.json({ message: 'Welcome to KIT' });
 });
+  
+app.use("/api", loginRouter); 
 
 app.listen(port, () => console.log(`Listening on ${port}`));
