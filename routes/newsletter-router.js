@@ -28,4 +28,27 @@ router.get('/answers', async (req, res) => {
       }
 });
 
+router.post('/answers/new', async (req, res) => {
+  const { name, response, user_id, question_id } = req.body;
+
+  try {
+    if (!response) {
+      return res.status(400).json({ message: "Add a response."})
+    }
+  
+
+  const [newAnswer] = await db("responses").insert({
+    name,
+    user_id,
+    response,
+    question_id,
+  });
+
+  return res.status(201).json({ message: "response added successfully", id: newAnswer });
+  } catch (error) {
+    console.error("Error adding update:", error);
+    return res.status(500).json({ message: "Internal server error." });
+  }
+});
+
 export default router;
