@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import loginRouter from './routes/login-router.js'
 import updateRouter from './routes/update-router.js'
+import newsletterRouter from './routes/newsletter-router.js'
 
 dotenv.config();
 
@@ -25,7 +26,8 @@ app.use("/api", loginRouter);
 
 app.use("/api/update", updateRouter);
 
-app.use("/uploads", express.static("uploads"));
+app.use("/api/newsletter", newsletterRouter);
 
+app.use("/uploads", express.static("uploads"));
 
 app.listen(port, () => console.log(`Listening on ${port}`));
