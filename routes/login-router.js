@@ -5,6 +5,7 @@ import knexConfig from "../knexfile.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
+
 dotenv.config();
 
 const router = express.Router();
